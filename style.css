@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@700&family=Montserrat:wght@500;700&display=swap');
+
+    :root{
+        --primary-green-500: hsl(158, 36%, 37%);
+        --primary-green-700: hsl(158, 42%, 18%);
+        --neutral-black: hsl(212, 21%, 14%);
+        --neutral-grey: hsl(228, 12%, 48%);
+        --neutral-cream: hsl(30, 38%, 92%);
+        --neutral-white: hsl(0, 0%, 100%);
+
+        --text-size-900 : 2em;
+        --text-size-700 : 1.5em;
+        --text-size-600 : 1.25em;
+        --text-size-500 : 0.875em;
+        --text-size-400 : 0.815em;
+        --text-size-300: 0.75em;
+
+        --space-900: 5.25em;
+        --space-500: 2.5em;
+        --space-400: 2em;
+        --space-300: 1.5em;
+        --space-200: 1em;
+        --space-100: 0.5em;
+        --space-50: 0.25em;
+
+        --image-width : 20em;
+        --section-width : calc(0.9 * var(--image-width));
+
+        --border-radius-300 : 1em; 
+        --border-radius-100 : 0.5em;
+        
+        --text-preset-1 : normal normal bold 100% "Fraunces" ;
+        --text-preset-2 : normal normal bold 110% "Montserrat"; 
+        --text-preset-3 : normal normal medium 160% "Montserrat"; 
+        --text-preset-4 : normal normal medium 120% "Montserrat"; 
+        --text-preset-4-letter-spacing : calc(5*1em/16);
+        
+        --flex-direction : row;
+    }     
+@media (max-width : 375px){
+    :root{
+        --flex-direction : column;
+        --image-width : 100vw;
+        --section-width : 100vw;
+        
+    }
+}
+
+body{
+    background: var(--neutral-cream);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+img{
+    max-width: 100%;
+    display: block;
+}
+
+
+.card{
+    display: flex;
+    flex-direction: var(--flex-direction);
+    background: var(--neutral-cream);
+    font-family: 'Montserrat' , monospace;
+    width: 100%;
+    margin-inline: var(--space-100);
+    border-radius: var(--border-radius-100);
+    overflow: hidden;
+    
+}
+
+.card__image{
+    width: var(--image-width);
+    flex-shrink: 0;
+    
+}
+.card__section{
+    
+    background: var(--neutral-white); 
+    width : 100%;
+    padding-inline: var(--space-300);
+    padding-block: var(--space-300);
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    overflow: hidden;
+    
+}
+.card__image,
+.card__section{
+    margin : 0   ;
+    width: var(--section-width);
+    flex-shrink: 0;
+}
+
+.card__category{
+    font: var(--text-preset-4);
+    font-size: var(--text-size-400);
+    padding-block: var(--space-100);
+    letter-spacing: var(--text-preset-4-letter-spacing);
+    text-transform: uppercase;
+    color: var(--neutral-grey);
+}
+.card__description{
+    color: var(--neutral-grey);
+    font: var(--text-preset-3);
+    font-size: var(--text-size-500);
+    line-height: var(--text-size-700);
+}
+
+
+
+.card__title{
+    font: var(--text-preset-1);
+    font-size: var(--text-size-900);
+    padding-block: var(--space-100);
+    margin: 0;
+    line-height: var(--text-size-500);
+}
+
+
+
+.card__pricing{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--space-200);
+}
+
+.card__price{
+    font : var(--text-preset-3);
+    color: var(--neutral-grey);
+    
+}
+.card__price--offer{
+    font : var(--text-preset-1);
+    font-size: var(--text-size-900);
+    color: var(--primary-green-500);
+    margin-block: var(--space-100);
+}
+
+
+.button{
+    background: var(--primary-green-500);
+    color: var(--neutral-white);
+    padding-block: var(--space-200);
+    padding-inline: var(--space-900);
+    display: flex;
+    flex-direction: row;
+    gap: var(--space-200);
+    border-radius: var(--border-radius-100);
+    border: none;
+    justify-content: center;
+    margin-block: var(--space-100);
+
+
+}
+
+.button__text{
+   font: var(--text-preset-2);
+   font-size: var(--text-size-400);
+}
+.button__icon{
+    scale: 90%;
+}
+
+.button:hover{
+    background: var(--primary-green-700);
+
+}
