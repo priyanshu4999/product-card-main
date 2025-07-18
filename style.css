@@ -23,8 +23,9 @@
         --space-100: 0.5em;
         --space-50: 0.25em;
 
-        --image-width : 20em;
-        --section-width : calc(0.9 * var(--image-width));
+        --image-width : 100vw;
+        --section-width : 100vw;
+
 
         --border-radius-300 : 1em; 
         --border-radius-100 : 0.5em;
@@ -35,13 +36,16 @@
         --text-preset-4 : normal normal medium 120% "Montserrat"; 
         --text-preset-4-letter-spacing : calc(5*1em/16);
         
-        --flex-direction : row;
-    }     
-@media (max-width : 375px){
-    :root{
+        
         --flex-direction : column;
-        --image-width : 100vw;
-        --section-width : 100vw;
+    }  
+       
+@media (min-width : 375px){
+    :root{
+        --flex-direction : row;
+        --image-width : 20em;
+        --section-width : calc(0.9 * var(--image-width));
+
         
     }
 }

@@ -1,4 +1,4 @@
-  data = {
+  const data = {
     imageDevice : "./images/image-product-mobile.jpg" ,
     imageMobile: "./images/image-product-desktop.jpg",
     buttonIcon : "./images/icon-cart.svg",
@@ -14,13 +14,14 @@
 
 const app = document.createElement("main")
 const footer = document.createElement("footer")
+footer.className = "attribution";
 app.innerHTML = `
 
     <article class="card">
         <figure class = "card__image" >
             <picture>
             <source srcset=${data.imageDevice} media="(max-width : 375px)">
-            <img src=${data.imageMobile}>
+            <img src=${data.imageMobile} alt=${data.brand}>
             </picture>
         </figure>
         <section class="card__section">
@@ -29,9 +30,9 @@ app.innerHTML = `
           <p class="card__description">${data.tagline}</p>
           <div class="card__pricing">
               <h1 class="card__price--offer">${data.offer}</h1>
-              <h4 class="card__price"><s>${data.price}</s></h4>
+              <p class="card__price"><s>${data.price}</s></p>
           </div>
-          <button class ="button"><img src=${data.buttonIcon} alt = "#" class="button__icon"/>
+          <button class ="button" type="submit"><img src=${data.buttonIcon} alt = "#" class="button__icon"/>
             <span class="button__text">${data.cart}</span></button>
         </section>
     
@@ -39,10 +40,10 @@ app.innerHTML = `
 `
 
 footer.innerHTML = `
-  <footer class="attribution">
+  
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
-  </footer>
+
 `
 document.body.appendChild(app)
 document.body.appendChild(footer)
